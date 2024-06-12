@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom"
 
 export const Libros = () => {
 
@@ -9,6 +9,7 @@ export const Libros = () => {
     return(
         <>
         <h2>Libros</h2>
+        <NavLink to={`/inicio`} className="HeaderNav-a">Inicio</NavLink> 
         </>
     )
 }
