@@ -1,0 +1,95 @@
+.Libreria-div{
+    width: 90%;
+    margin: auto;
+    color: white;
+    background-color: rgb(4, 4, 34);
+}
+.Libros-ul{
+    width: 50%;
+    margin: auto;
+   
+    
+}
+.Libro-cada{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: start;
+    background-color: rgb(16, 0, 62);
+    margin: 2rem 0;
+    padding: 2rem;
+}
+
+.Texto-div{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: .5rem;
+    
+}
+
+.Botones-div{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: .5rem;
+}
+.Libros-li{
+
+}
+.Delete-boton{
+    padding: .5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: red;
+}
+.Edit-boton{
+    padding: .5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(88, 88, 222);
+}
+.Formularios{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: start;
+    
+
+}
+.Add-form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: .5rem;
+    background-color: rgb(78, 43, 0);
+}
+
+.Edit-form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: .5rem;
+    background-color: rgb(78, 43, 0);
+}
+
+.Add-input{
+    border: 3px solid rgb(187, 109, 0);
+}
+.Add-submit{
+
+}
+
+
+.Edit-input{
+    border: 3px solid rgb(187, 109, 0);
+}
+.Edit-submit{
+
+}

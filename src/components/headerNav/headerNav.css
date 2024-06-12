@@ -1,0 +1,30 @@
+.HeaderNav-div{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    background-color: rgb(255, 216, 157);
+}
+.Nav-h1{
+    color: brown;
+    margin: auto;
+}
+
+.Nav-div{
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    background-color: rgb(255, 216, 157);
+
+}
+
+.HeaderNav-a{
+    width: 10%;
+    color: rgb(48, 27, 2);
+}

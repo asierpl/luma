@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 
-
+import './headerNav.css'
 
 export const HeaderNav = () => {
 
@@ -31,9 +31,16 @@ export const HeaderNav = () => {
 
     return(
         <>
-
-        <NavLink to={`${VITE_URL_API}/libros`} className="HeaderNav-a">API : /libros</NavLink> <br />
-        <NavLink to={`/libros`} className="HeaderNav-a">Libros</NavLink> 
+        <div className="HeaderNav-div">
+            <h1 className="Nav-h1">Hacer diseño de un libro de fondo</h1>
+            <div className="Nav-div" >
+                <NavLink to={`/inicio`} className="HeaderNav-a">Inicio</NavLink> 
+                <NavLink to={`/libros`} className="HeaderNav-a">Libros</NavLink> 
+            </div>
+        </div>
+       
+        
+       
         
 
             {/* {nav.length > 0 ? (

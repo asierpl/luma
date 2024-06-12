@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
     <>
-      <h1>LUMA</h1>
+      
       <Routes>
         <Route path='/'       element={<Login/>}/>
         <Route path='/inicio' element={<Inicio/>}/>
