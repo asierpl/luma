@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { HeaderNav } from "../components/headerNav"
 
 
 export const Inicio = () => {
@@ -44,6 +45,9 @@ export const Inicio = () => {
     return(
         <>
         <h2>Inicio</h2>
+
+        <HeaderNav/>
+
         <button onClick={cerrarHandler}>Cerrar sesión</button>
         <p>{texto}</p>
         </>
