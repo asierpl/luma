@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { HeaderNav } from "../components/headerNav"
+import { HeaderNav } from "../components/headerNav/headerNav"
 
 
 export const Inicio = () => {

@@ -1,6 +1,9 @@
+import { createContext } from "react"
+import { useContext } from "react"
 import { useEffect, useRef, useState } from "react"
 import { NavLink } from "react-router-dom"
 
+const LibrosContext = createContext()
 
 export const Libros = () => {
 
@@ -119,39 +122,64 @@ const [editOpen, setEditOpen] = useState(false)
 
 
     return(
+        
+        <LibrosContext.Provider value={{ formAddRef , addHandler , formEditHandler , formEditRef }}>
         <>
-        <NavLink to={`/inicio`} className="HeaderNav-a">Inicio</NavLink> 
+            <NavLink to={`/inicio`} className="HeaderNav-a">Inicio</NavLink> 
 
+            <h2>Lista de libros</h2>
+            {libros.length > 0 ? (
+                libros.map((item, index) => (
+                    <ul className="Libros-ul" key={index}>
+                        <li className="Libros-li" >{item.nombre}</li>
+                        <li className="Libros-li" >{item.autor}</li>
+                        <li className="Libros-li" >{item.fecha}</li>
+                        <button className="Delete-boton" onClick={()=> deleteHandler(item._id)} >Eliminar</button>
+                        <button className="Edit-boton" onClick={()=> editHandler(item._id)} >Editar</button>
+                    </ul>
+                ))
+            ) : (
+                <h3>No hay datos disponibles</h3>
+            )}
 
-        <h2>Lista de libros</h2>
-        {libros.length > 0 ? (
-            libros.map((item, index) => (
-                <div key={index}>
-                    <p>{item.nombre}</p>
-                    <p>{item.autor}</p>
-                    <p>{item.fecha}</p>
-                    <button onClick={()=> deleteHandler(item._id)} >Eliminar</button>
-                    <button onClick={()=> editHandler(item._id)} >Editar</button>
-                </div>
-            ))
-        ) : (
-            <h3>No hay datos disponibles</h3>
-        )}
+            <div className="Formularios">
+                <AddLibro/>
+                <EditLibro/>
+            </div>
+        </>
+        </LibrosContext.Provider>
+    )
+}
 
+const AddLibro = () => {
+
+    const { formAddRef , addHandler } = useContext(LibrosContext)
+
+    return(
+        <>
         <h2>Añadir libro</h2>
-        <form  ref={formAddRef} onSubmit={ addHandler }>
-            <input type="text"   id="nombreAdd" placeholder="Título"/>
-            <input type="text"   id="autorAdd"  placeholder="Autor"/>
-            <input type="number" id="fechaAdd"  placeholder="Año"/>
-            <input type="submit" value="Añadir"/>
+        <form  className="Add-form" ref={formAddRef} onSubmit={ addHandler }>
+            <input className="Add-input" type="text"   id="nombreAdd" placeholder="Título"/>
+            <input className="Add-input" type="text"   id="autorAdd"  placeholder="Autor"/>
+            <input className="Add-input" type="number" id="fechaAdd"  placeholder="Año"/>
+            <input className="Add-submit" type="submit" value="Añadir"/>
         </form>
+        </>
+    )
+}
 
+const EditLibro = () => {
+
+    const { formEditHandler , formEditRef } = useContext(LibrosContext)
+
+    return(
+        <>
         <h2>Editar libro</h2>
-        <form onSubmit={formEditHandler} ref={formEditRef}>
-            <input type="hidden" id="editId" />
-            <input type="text"   id="editNombre" placeholder="Título" />
-            <input type="text"   id="editAutor"  placeholder="Autor" />
-            <input type="number"   id="editFecha"  placeholder="Año" />
+        <form className="Edit-form" onSubmit={formEditHandler} ref={formEditRef}>
+            <input className="Edit-input" type="hidden" id="editId" />
+            <input className="Edit-input" type="text"   id="editNombre" placeholder="Título" />
+            <input className="Edit-input" type="text"   id="editAutor"  placeholder="Autor" />
+            <input className="Edit-input" type="number"   id="editFecha"  placeholder="Año" />
             <input className="Edit-submit" type="submit" value="Editar" />
         </form>
         </>
