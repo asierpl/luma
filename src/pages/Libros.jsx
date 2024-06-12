@@ -8,6 +8,7 @@ export const Libros = () => {
     const [libros , setLibros] = useState([])
 
     const formAddRef = useRef()
+    const formEditRef = useRef()
 
     useEffect( ()=> {
         
@@ -25,7 +26,6 @@ export const Libros = () => {
             .finally(()=> controller.abort())
 
     } , [])
-
 
 
     const addHandler = (e) => {
@@ -68,6 +68,55 @@ export const Libros = () => {
         setLibros(data)
     }
     
+const [editOpen, setEditOpen] = useState(false)
+  const editToggleOpen = () => setEditOpen(!editOpen)
+
+  const editHandler = (id) => {
+
+    const buscar = libros.find((libro) => libro._id === id)
+
+    const { editId , editNombre , editAutor , editFecha } = formEditRef.current
+
+    editId.value     = buscar._id
+    editNombre.value = buscar.nombre
+    editAutor.value  = buscar.autor
+    editFecha.value  = buscar.fecha
+
+    editToggleOpen()
+  }
+
+  const formEditHandler = async (e) => {
+    e.preventDefault()
+
+    const { editId , editNombre , editAutor , editFecha } = formEditRef.current
+
+    const editarLibro = {
+      
+        nombre : editNombre.value,
+        autor  : editAutor.value,
+        fecha  : editFecha.value
+    }
+
+    let options = {
+        method: "put",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(editarLibro)
+    }
+
+    try {
+        const response = await fetch(`${VITE_URL_API}/libros/${editId.value}`, options )
+        const listaEditada = await response.json()
+
+        setLibros(listaEditada)
+
+    } catch (error) {
+        console.error("Error updating film:", error)
+    }
+
+    formEditRef.current.reset()
+    editToggleOpen()
+  }
+
 
     return(
         <>
@@ -82,6 +131,7 @@ export const Libros = () => {
                     <p>{item.autor}</p>
                     <p>{item.fecha}</p>
                     <button onClick={()=> deleteHandler(item._id)} >Eliminar</button>
+                    <button onClick={()=> editHandler(item._id)} >Editar</button>
                 </div>
             ))
         ) : (
@@ -94,6 +144,15 @@ export const Libros = () => {
             <input type="text"   id="autorAdd"  placeholder="Autor"/>
             <input type="number" id="fechaAdd"  placeholder="Año"/>
             <input type="submit" value="Añadir"/>
+        </form>
+
+        <h2>Editar libro</h2>
+        <form onSubmit={formEditHandler} ref={formEditRef}>
+            <input type="hidden" id="editId" />
+            <input type="text"   id="editNombre" placeholder="Título" />
+            <input type="text"   id="editAutor"  placeholder="Autor" />
+            <input type="number"   id="editFecha"  placeholder="Año" />
+            <input className="Edit-submit" type="submit" value="Editar" />
         </form>
         </>
     )
