@@ -10,9 +10,10 @@ const LibrosContext = createContext()
 export const Libreria = () => {
 
     const { VITE_URL_API } = import.meta.env
-    const [libros , setLibros] = useState([])
 
+    const [libros , setLibros] = useState([])
     const [active, setActive] = useState(false)
+    const [editOpen, setEditOpen] = useState(false)
     const toggleAddForm = () => {
         setActive(!active)
     }
@@ -37,6 +38,11 @@ export const Libreria = () => {
 
     } , [])
 
+    useEffect(() => {
+        if (editOpen && formEditRef.current) {
+            formEditRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [editOpen]); // Dependencia: editOpen
 
     const addHandler = (e) => {
         e.preventDefault()
@@ -81,9 +87,7 @@ export const Libreria = () => {
         setLibros(data)
     }
     
-    const [editOpen, setEditOpen] = useState(false)
-    const editToggleOpen = () => setEditOpen(!editOpen)
-
+    
   const editHandler = (id) => {
 
     const buscar = libros.find((libro) => libro._id === id)
@@ -95,7 +99,7 @@ export const Libreria = () => {
     editAutor.value  = buscar.autor
     editFecha.value  = buscar.fecha
 
-    editToggleOpen()
+    setEditOpen(true)
   }
 
   const formEditHandler = async (e) => {
@@ -127,7 +131,7 @@ export const Libreria = () => {
     }
 
     formEditRef.current.reset()
-    editToggleOpen()
+    setEditOpen(false)
   }
 
 
@@ -138,18 +142,19 @@ export const Libreria = () => {
         <div className="Libreria-div">
             <h2 className='Lista-h2' >Lista de libros</h2>
             <button className="add-button" onClick={toggleAddForm}>+ Añadir</button> 
-
+                <div className="Formulario-add">
                     {active && (
-                        <div className="lightbox">
-                            <button className="close-button" onClick={() => setActive(false)}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                                </svg>
-                            </button>
-                                <AddLibro />
-                            
-                        </div>
-                    )}
+                            <div className="lightbox">
+                                <button className="close-button" onClick={() => setActive(false)}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                                    </svg>
+                                </button>
+                                    <AddLibro />
+                            </div>
+                        )}
+                </div>
+                    
 
                 {libros.length > 0 ? (
                     libros.map((item, index) => (
@@ -171,7 +176,7 @@ export const Libreria = () => {
                     <h3>No hay datos disponibles</h3>
                 )}
 
-                <div className="Formularios">
+                <div className="Formulario-edit">
                     <EditLibro/>
                 </div>
         </div>
