@@ -1,0 +1,96 @@
+.Login-div {
+    background-image: url('/assets/libro13.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Luma {
+    font-family: 'Garamond', serif;
+    font-size: 4rem;
+    color: #D2691E; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 2rem;
+    border-radius: 10px;
+    
+}
+
+.Login-form {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Login-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #8B4513; 
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #8B4513; 
+    background-color: #FAF3E0; 
+    
+}
+
+.Login-input:focus,
+.Login-input:active {
+    border-color: #8B4513; 
+    outline: none; 
+}
+
+.Password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.Show-password-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #8B4513;
+    padding: 0;
+}
+
+.Login-submit {
+    padding: 0.75rem 1.5rem;
+    background-color: #D2691E; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Login-submit:hover {
+    background-color: #A0522D; 
+}
+
+.Login-footer { 
+    font-size: 0.8rem;
+    color: #8B4513; 
+    text-align: center;
+    
+}
+
+
+@media(max-width: 320px) {
+    
+}
