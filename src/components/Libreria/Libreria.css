@@ -1,108 +1,155 @@
-/* styles.css */
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .Libreria-div {
-    background-image: url('/assets/portada-libros5.jpeg'); /* Ruta a la imagen en la carpeta assets */
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Hacer que el contenedor ocupe toda la altura de la pantalla */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 20px;
-  }
-  
-  .Libros-ul {
-    width: 50%;
-    margin: auto;
-    background-color: rgba(16, 0, 62, 0.8); /* Fondo semi-transparente para los libros */
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  .Libro-cada {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-    background-color: rgba(16, 0, 62, 0.8);
-    margin: 2rem 0;
+.Libreria-div {
+  background-image: url('/assets/libro333.jpg'); 
+  background-size: contain;
+  background-position: center;
+  min-height: calc(100vh - 10rem); /* Ajustar altura menos 10 rem para el título debajo del header */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinear contenido desde la parte superior */
+  align-items: center;
+  color: white;
+  padding: 1rem;
+}
+
+.Lista-h2{
+    font-family: 'Garamond', serif;
+    font-size: 2rem;
+    color: #D2691E; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.8); 
     padding: 2rem;
     border-radius: 10px;
-  }
+    margin-top: 7rem;
+}
+
+.Add-h2 , .Edit-h2 {
+  font-size: 2rem;
+  margin-top: 7rem; /* Espacio desde la parte superior (dejar espacio para el header fijo) */
+  margin-bottom: 2rem;
+  color: #D2691E; /* Color naranja otoñal */
+  background-color: rgba(255, 245, 230, 0.8);
   
-  .Texto-div {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-  }
+}
+
+
+
+.Libros-ul {
+  width: 50%; 
+  margin: auto;
+  margin: 1rem 0;
   
-  .Botones-div {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-  }
-  
-  .Libros-li {
-    list-style: none;
-  }
-  
-  .Delete-boton, .Edit-boton {
-    padding: .5rem;
-    border-radius: 20px;
-    cursor: pointer;
-    border: none;
-    color: white;
-  }
-  
-  .Delete-boton {
-    background-color: red;
-  }
-  
-  .Edit-boton {
-    background-color: rgb(88, 88, 222);
-  }
-  
-  .Formularios {
-    width: 50%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-    gap: 2rem;
-  }
-  
-  .Add-form, .Edit-form {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    background-color: rgba(78, 43, 0, 0.8); /* Fondo semi-transparente */
-    padding: 1rem;
-    border-radius: 10px;
-    width: 100%;
-  }
-  
-  .Add-input, .Edit-input {
-    border: 3px solid rgb(187, 109, 0);
-    padding: .5rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .Add-submit, .Edit-submit {
-    background-color: rgb(187, 109, 0);
-    border: none;
-    padding: .5rem;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
-    width: 100%;
-  }
-  
+  background-color: rgba(255, 245, 230, 0.8); /* Fondo crema */
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden; /* Ocultar el desbordamiento de contenido */
+}
+
+.Libro-cada {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 245, 230, 0.8); /* Fondo crema */
+  margin: rem 0; /* Espacio reducido entre cuadros */
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+
+
+.Libreria-div .Botones-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Libreria-div .Libros-li {
+  list-style: none;
+  color: #4B3621; /* Color marrón otoñal */
+  font-size: 1rem;
+}
+
+.Libreria-div .Delete-boton, .Libreria-div .Edit-boton {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.Libreria-div .Delete-boton {
+  background-color: #8B0000; /* Rojo otoñal */
+}
+
+.Libreria-div .Edit-boton {
+  background-color: #556B2F; /* Verde otoñal */
+}
+
+.Libreria-div .Delete-boton:hover, .Libreria-div .Edit-boton:hover {
+  background-color: #A52A2A; /* Cambio de color al hacer hover */
+}
+
+.Libreria-div .Formularios {
+  width: 80%; /* Reducir el ancho para que los formularios estén más alineados */
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 2rem;
+}
+
+.Libreria-div .Add-form, .Libreria-div .Edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: rgba(255, 245, 230, 0.8); /* Fondo crema */
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.Libreria-div .Add-input, .Libreria-div .Edit-input {
+  border: 3px solid #8B4513; /* Marrón otoñal */
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: #8B4513; /* Marrón otoñal */
+  background-color: rgba(255, 250, 240, 0.8); /* Fondo beige */
+}
+
+.Libreria-div .Add-submit, .Libreria-div .Edit-submit {
+  background-color: #D2691E; /* Naranja otoñal */
+  border: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.Libreria-div .Add-submit:hover, .Libreria-div .Edit-submit:hover {
+  background-color: #A0522D; /* Cambio de color al hacer hover */
+}
+
+.Libreria-div .Add-input, .Libreria-div .Edit-input {
+  border: 3px solid #8B4513; /* Marrón otoñal */
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: #8B4513; /* Marrón otoñal */
+  background-color: rgba(255, 250, 240, 0.8); /* Fondo beige */
+  transition: border-color 0.3s ease; /* Transición suave para el color del borde */
+}
+
+.Libreria-div .Add-input:focus,
+.Libreria-div .Add-input:active,
+.Libreria-div .Edit-input:focus,
+.Libreria-div .Edit-input:active {
+  border-color: #8B4513; /* Mantener el color del borde al hacer clic o enfocar */
+  outline: none; /* Eliminar el contorno predeterminado */
+}

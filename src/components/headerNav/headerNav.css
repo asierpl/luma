@@ -1,32 +1,61 @@
-.HeaderNav-div{
+.HeaderNav {
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    right: 0;
     width: 90%;
     margin: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: start;
-    background-color: rgb(255, 216, 157);
-}
-.Nav-h1{
-    color: brown;
-    margin: auto;
+    background-color: #FAF3E0;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-.Nav-div{
-    margin: auto;
-    padding: 2rem;
+.HeaderNav-div {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
-    align-items: start;
-    gap: 5rem;
-    background-color: rgb(255, 216, 157);
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
 }
 
-.HeaderNav-a{
-    padding: 1rem;
-    width: 50%;
-    color: rgb(48, 27, 2);
-    background-color: brown;
+.Nav-h1 {
+    font-family: 'Garamond', serif;
+    font-size: 2rem;
+    color: #D2691E; 
+    margin-right: 2rem;
+}
+
+.Nav-div {
+    display: flex;
+    gap: 2rem;
+}
+
+.HeaderNav-a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #8B4513; /* Marrón medio */
+    background-color: #D2B48C; /* Beige */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.HeaderNav-a:hover {
+    background-color: #BC8F8F; /* Beige más oscuro al pasar el ratón */
+}
+
+.Cerrar-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #8B4513; /* Marrón medio */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Cerrar-btn:hover {
+    background-color: #A0522D; /* Marrón más oscuro al pasar el ratón */
 }

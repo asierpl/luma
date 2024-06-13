@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { HeaderNav } from "../components/headerNav/headerNav"
-
+import '../components/Home/Inicio.css'
 
 export const Inicio = () => {
 
@@ -35,21 +35,20 @@ export const Inicio = () => {
 
     } , [])
 
-    const cerrarHandler = () => {
-        localStorage.removeItem('usuarios')
-        navigate('/')
-    }
+    
 
     const {texto} = datos
 
     return(
         <>
-        <h2>Inicio</h2>
+        <div className="Inicio">
 
-        <HeaderNav/>
+            <HeaderNav/>
+            <p>{texto}</p>
 
-        <button onClick={cerrarHandler}>Cerrar sesión</button>
-        <p>{texto}</p>
+        </div>
+
+        
         </>
     )
 }

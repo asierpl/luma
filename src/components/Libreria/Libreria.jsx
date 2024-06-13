@@ -73,8 +73,8 @@ export const Libreria = () => {
         setLibros(data)
     }
     
-const [editOpen, setEditOpen] = useState(false)
-  const editToggleOpen = () => setEditOpen(!editOpen)
+    const [editOpen, setEditOpen] = useState(false)
+    const editToggleOpen = () => setEditOpen(!editOpen)
 
   const editHandler = (id) => {
 
@@ -128,7 +128,7 @@ const [editOpen, setEditOpen] = useState(false)
         <LibrosContext.Provider value={{ formAddRef , addHandler , formEditHandler , formEditRef }}>
         <>
         <div className="Libreria-div">
-            <h2>Lista de libros</h2>
+            <h2 className='Lista-h2' >Lista de libros</h2>
                 {libros.length > 0 ? (
                     libros.map((item, index) => (
                         <ul className="Libros-ul" key={index}>
@@ -168,7 +168,7 @@ const AddLibro = () => {
         <>
         
         <form  className="Add-form" ref={formAddRef} onSubmit={ addHandler }>
-            <h2>Añadir libro</h2>
+            <h2 className='Add-h2' >Añadir libro</h2>
             <input className="Add-input" type="text"   id="nombreAdd" placeholder="Título"/>
             <input className="Add-input" type="text"   id="autorAdd"  placeholder="Autor"/>
             <input className="Add-input" type="number" id="fechaAdd"  placeholder="Año"/>
@@ -186,7 +186,7 @@ const EditLibro = () => {
         <>
         
         <form className="Edit-form" onSubmit={formEditHandler} ref={formEditRef}>
-            <h2>Editar libro</h2>
+            <h2 className='Edit-h2' >Editar libro</h2>
             <input className="Edit-input" type="hidden" id="editId" />
             <input className="Edit-input" type="text"   id="editNombre" placeholder="Título" />
             <input className="Edit-input" type="text"   id="editAutor"  placeholder="Autor" />
