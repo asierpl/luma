@@ -3,7 +3,7 @@ import './Libreria.css'
 import { createContext } from "react"
 import { useContext } from "react"
 import { useEffect, useRef, useState } from "react"
-import { NavLink } from "react-router-dom"
+
 
 const LibrosContext = createContext()
 
@@ -11,6 +11,11 @@ export const Libreria = () => {
 
     const { VITE_URL_API } = import.meta.env
     const [libros , setLibros] = useState([])
+
+    const [active, setActive] = useState(false)
+    const toggleAddForm = () => {
+        setActive(!active)
+    }
 
     const formAddRef = useRef()
     const formEditRef = useRef()
@@ -54,7 +59,10 @@ export const Libreria = () => {
 
         fetch(`${VITE_URL_API}/libros` , options)
             .then( res => res.json() )
-            .then( data => setLibros(data))
+            .then( data => {
+                setLibros(data)
+                toggleAddForm()
+            })
     }
 
     const deleteHandler = async (id) => {
@@ -129,6 +137,20 @@ export const Libreria = () => {
         <>
         <div className="Libreria-div">
             <h2 className='Lista-h2' >Lista de libros</h2>
+            <button className="add-button" onClick={toggleAddForm}>+ Añadir</button> 
+
+                    {active && (
+                        <div className="lightbox">
+                            <button className="close-button" onClick={() => setActive(false)}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </button>
+                                <AddLibro />
+                            
+                        </div>
+                    )}
+
                 {libros.length > 0 ? (
                     libros.map((item, index) => (
                         <ul className="Libros-ul" key={index}>
@@ -150,7 +172,6 @@ export const Libreria = () => {
                 )}
 
                 <div className="Formularios">
-                    <AddLibro/>
                     <EditLibro/>
                 </div>
         </div>

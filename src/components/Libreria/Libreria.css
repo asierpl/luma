@@ -2,47 +2,93 @@
   background-image: url('/assets/libro333.jpg'); 
   background-size: contain;
   background-position: center;
-  min-height: calc(100vh - 10rem); /* Ajustar altura menos 10 rem para el título debajo del header */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alinear contenido desde la parte superior */
+  justify-content: flex-start; 
   align-items: center;
-  color: white;
   padding: 1rem;
 }
 
 .Lista-h2{
     font-family: 'Garamond', serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #D2691E; 
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-    margin-bottom: 2rem;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
     background-color: rgba(255, 255, 255, 0.8); 
     padding: 2rem;
     border-radius: 10px;
     margin-top: 7rem;
+    
+}
+
+.add-button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: #D2691E; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.lightbox {
+  position: fixed; /* Fijar la posición del contenido */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrar en la pantalla */
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegurarse de que está por encima de otros elementos */
+  background-color: rgba(255, 245, 230, 0.8); 
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ocultar el formulario de añadir por defecto */
+.Add-form {
+  display: none;
+}
+
+
+
+.close-button {
+  background-color: #D2691E; /* Naranja otoñal */
+  width: 1.7rem;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  margin-top: 1rem;
+  padding: .3rem;
+  font-weight: bold;
 }
 
 .Add-h2 , .Edit-h2 {
-  font-size: 2rem;
-  margin-top: 7rem; /* Espacio desde la parte superior (dejar espacio para el header fijo) */
-  margin-bottom: 2rem;
-  color: #D2691E; /* Color naranja otoñal */
-  background-color: rgba(255, 245, 230, 0.8);
+  font-size: 1.7rem;
+  padding: 1rem;
+  color: #D2691E;
+  text-align: center;
+  font-family: 'Garamond', serif;
+  font-weight: bold;
   
 }
-
-
 
 .Libros-ul {
   width: 50%; 
   margin: auto;
-  margin: 1rem 0;
-  
-  background-color: rgba(255, 245, 230, 0.8); /* Fondo crema */
+  margin:.5rem;
+  background-color: rgba(255, 245, 230, 0.8); 
   padding: 10px;
   border-radius: 10px;
-  overflow: hidden; /* Ocultar el desbordamiento de contenido */
+  overflow: hidden; 
 }
 
 .Libro-cada {
@@ -50,27 +96,25 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 245, 230, 0.8); /* Fondo crema */
-  margin: rem 0; /* Espacio reducido entre cuadros */
-  padding: 2rem;
+  background-color: rgba(255, 245, 230, 0.8); 
+  padding: 1.5rem;
   border-radius: 10px;
 }
 
 
-
-.Libreria-div .Botones-div {
+.Botones-div {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.Libreria-div .Libros-li {
+.Libros-li {
   list-style: none;
-  color: #4B3621; /* Color marrón otoñal */
+  color: #4B3621; 
   font-size: 1rem;
 }
 
-.Libreria-div .Delete-boton, .Libreria-div .Edit-boton {
+.Delete-boton, .Edit-boton {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
@@ -80,20 +124,20 @@
   transition: background-color 0.3s ease;
 }
 
-.Libreria-div .Delete-boton {
-  background-color: #8B0000; /* Rojo otoñal */
+.Delete-boton {
+  background-color: #8B0000; 
 }
 
-.Libreria-div .Edit-boton {
-  background-color: #556B2F; /* Verde otoñal */
+.Edit-boton {
+  background-color: #556B2F; 
 }
 
-.Libreria-div .Delete-boton:hover, .Libreria-div .Edit-boton:hover {
-  background-color: #A52A2A; /* Cambio de color al hacer hover */
+.Delete-boton:hover, .Edit-boton:hover {
+  background-color: #9e6329; 
 }
 
-.Libreria-div .Formularios {
-  width: 80%; /* Reducir el ancho para que los formularios estén más alineados */
+.Formularios {
+  width: 80%; 
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -102,27 +146,27 @@
   gap: 2rem;
 }
 
-.Libreria-div .Add-form, .Libreria-div .Edit-form {
+.Add-form, .Edit-form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-color: rgba(255, 245, 230, 0.8); /* Fondo crema */
+  background-color: rgba(255, 245, 230, 0.8); 
   padding: 1rem;
   border-radius: 10px;
   width: 100%;
 }
 
-.Libreria-div .Add-input, .Libreria-div .Edit-input {
-  border: 3px solid #8B4513; /* Marrón otoñal */
+.Add-input, .Edit-input {
+  border: 3px solid #8B4513; 
   padding: 0.5rem;
   width: 100%;
   box-sizing: border-box;
-  color: #8B4513; /* Marrón otoñal */
-  background-color: rgba(255, 250, 240, 0.8); /* Fondo beige */
+  color: #8B4513; 
+  background-color: rgba(255, 250, 240, 0.8); 
 }
 
-.Libreria-div .Add-submit, .Libreria-div .Edit-submit {
-  background-color: #D2691E; /* Naranja otoñal */
+.Add-submit, .Edit-submit {
+  background-color: #D2691E; 
   border: none;
   padding: 0.5rem;
   border-radius: 10px;
@@ -132,24 +176,24 @@
   transition: background-color 0.3s ease;
 }
 
-.Libreria-div .Add-submit:hover, .Libreria-div .Edit-submit:hover {
-  background-color: #A0522D; /* Cambio de color al hacer hover */
+.Add-submit:hover, .Edit-submit:hover {
+  background-color: #A0522D; 
 }
 
-.Libreria-div .Add-input, .Libreria-div .Edit-input {
-  border: 3px solid #8B4513; /* Marrón otoñal */
+.Add-input, .Edit-input {
+  border: 3px solid #8B4513; 
+  border-radius: 5px;
   padding: 0.5rem;
   width: 100%;
-  box-sizing: border-box;
-  color: #8B4513; /* Marrón otoñal */
-  background-color: rgba(255, 250, 240, 0.8); /* Fondo beige */
-  transition: border-color 0.3s ease; /* Transición suave para el color del borde */
+  color: #8B4513; 
+  background-color: rgba(255, 250, 240, 0.8); 
+  transition: border-color 0.3s ease; 
 }
 
-.Libreria-div .Add-input:focus,
-.Libreria-div .Add-input:active,
-.Libreria-div .Edit-input:focus,
-.Libreria-div .Edit-input:active {
-  border-color: #8B4513; /* Mantener el color del borde al hacer clic o enfocar */
-  outline: none; /* Eliminar el contorno predeterminado */
+.Add-input:focus,
+.Add-input:active,
+.Edit-input:focus,
+.Edit-input:active {
+  border-color: #8B4513; 
+  outline: none; 
 }
