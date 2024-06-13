@@ -1,5 +1,6 @@
 .Libreria-div {
   background-image: url('/assets/libro333.jpg'); 
+  height: 100vh;
   background-size: contain;
   background-position: center;
   display: flex;
@@ -136,7 +137,7 @@
   background-color: #9e6329; 
 }
 
-.Formularios {
+.Formulario-edit {
   width: 80%; 
   margin: auto;
   display: flex;
@@ -164,7 +165,12 @@
   color: #8B4513; 
   background-color: rgba(255, 250, 240, 0.8); 
 }
-
+.Edit-form{
+  
+  display: flex;
+  flex-flow: row nowrap;
+  
+}
 .Add-submit, .Edit-submit {
   background-color: #D2691E; 
   border: none;
