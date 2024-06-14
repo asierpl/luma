@@ -41,7 +41,7 @@ export const Carrousel = () => {
     return(
         <>
         <div className="Carrousel">
-
+            <h2 className="Carrousel-h2" >Novedades</h2>
             <div className="Carrousel-container" 
                 style={{
                     width : `${ datos.length * 100 }%`,

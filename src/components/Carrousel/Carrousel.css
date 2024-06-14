@@ -2,19 +2,33 @@
 
 .Carrousel{
     position: relative;
-    width: 50%;
+    width: 63%;
     margin: auto;
     overflow: hidden;
 }
+.Carrousel-h2{
+    font-family: 'Garamond', serif;
+    font-size: 1.5rem;
+    background-color: #D2691E; 
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8); 
+    padding: .5rem;
+    
+    text-align: center;
+    
+}
 
 .Carrousel-container{
-    width: 30%;
+   
     display: grid;
     grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
     transition: all .5s ease;
+    object-fit: cover;
+    
 }
 
-.Imagenes{
+.Carrousel-img{
     
     object-fit: cover;
 }
@@ -28,9 +42,9 @@
     width: 2rem;
     cursor: pointer;
     margin-right: .5rem;
-    color: rgb(21, 58, 3); /* Color del texto de los botones */
+    color: rgb(255, 255, 255); /* Color del texto de los botones */
     
-    background-color: #eabfb1; /* Color de fondo del botón (tono otoñal) */
+    background-color: #D2691E; /* Color de fondo del botón (tono otoñal) */
    
 }
 
@@ -39,4 +53,37 @@
     left: 0;
     margin-left: .5rem;
     
+}
+
+
+@media(max-width : 1328px){
+    .Carrousel{
+        width: 70%;
+    }
+}
+@media(max-width : 1200px){
+    .Carrousel{
+        width: 75%;
+    }
+}
+@media(max-width : 1100px){
+    .Carrousel{
+        width: 83%;
+    }
+}
+@media(max-width : 1024px){
+    .Carrousel{
+        width: 88%;
+    }
+}
+@media(max-width : 950px){
+    .Carrousel{
+        width: 93%;
+    }
+}
+
+@media(max-width : 768px){
+    .Carrousel{
+        width: 80%;
+    }
 }

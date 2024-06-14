@@ -79,7 +79,6 @@
   color: #D2691E;
   text-align: center;
   font-family: 'Garamond', serif;
-  font-weight: bold;
   
 }
 
@@ -113,7 +112,7 @@
 
 .Libros-li {
   list-style: none;
-  color: #4B3621; 
+  color: #8B4513;
   font-size: 1rem;
   white-space: nowrap; /* Evita el salto de línea */
   overflow: hidden; /* Oculta el desbordamiento */
@@ -192,11 +191,12 @@
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  margin: 1rem;
 }
 
 .Edit-h2{
   
-  font-size: 1rem;
+  font-size: 1.3rem;
   padding: 1rem;
   color: #D2691E;
   text-align: center;
