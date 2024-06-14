@@ -32,7 +32,7 @@ export const Libreria = () => {
 
         fetch(`${VITE_URL_API}/libros` , options)
             .then( res => res.json() )
-            .then( data => setLibros(data)) //libros es el nombre de la colección, nada que ver con el useState
+            .then( data => setLibros(data)) 
             .catch( error => console.log(error))
             .finally(()=> controller.abort())
 
@@ -142,43 +142,43 @@ export const Libreria = () => {
         <div className="Libreria-div">
             <h2 className='Lista-h2' >Lista de libros</h2>
             <button className="add-button" onClick={toggleAddForm}>+ Añadir</button> 
-                <div className="Formulario-add">
-                    {active && (
-                            <div className="lightbox">
-                                <button className="close-button" onClick={() => setActive(false)}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                                    </svg>
-                                </button>
-                                    <AddLibro />
-                            </div>
-                        )}
-                </div>
+            <div className="Formulario-add">
+                {active && (
+                        <div className="lightbox">
+                            <button className="close-button" onClick={() => setActive(false)}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </button>
+                                <AddLibro />
+                        </div>
+                    )}
+            </div>
                     
 
-                {libros.length > 0 ? (
-                    libros.map((item, index) => (
-                        <ul className="Libros-ul" key={index}>
-                            <div className="Libro-cada">
-                                <div className="Texto-div">
-                                    <li className="Libros-li" >{item.nombre}</li>
-                                    <li className="Libros-li" >{item.autor}</li>
-                                    <li className="Libros-li" >{item.fecha}</li>
-                                </div>
-                                <div className="Botones-div">
-                                    <button className="Delete-boton" onClick={()=> deleteHandler(item._id)} >Delete</button>
-                                    <button className="Edit-boton"   onClick={()=> editHandler(item._id)} >Editar</button>
-                                </div>
+            {libros.length > 0 ? (
+                libros.map((item, index) => (
+                    <ul className="Libros-ul" key={index}>
+                        <div className="Libro-cada">
+                            <div className="Texto-div">
+                                <li className="Libros-li" >{item.nombre}</li>
+                                <li className="Libros-li" >{item.autor}</li>
+                                <li className="Libros-li" >{item.fecha}</li>
                             </div>
-                        </ul>
-                    ))
-                ) : (
-                    <h3>No hay datos disponibles</h3>
-                )}
+                            <div className="Botones-div">
+                                <button className="Delete-boton" onClick={()=> deleteHandler(item._id)} >Borrar</button>
+                                <button className="Edit-boton"   onClick={()=> editHandler(item._id)} >Editar</button>
+                            </div>
+                        </div>
+                    </ul>
+                ))
+            ) : (
+                <h3>No hay datos disponibles</h3>
+            )}
 
-                <div className="Formulario-edit">
-                    <EditLibro/>
-                </div>
+            <div className="Formulario-edit">
+                <EditLibro/>
+            </div>
         </div>
            
         </>
@@ -217,7 +217,7 @@ const EditLibro = () => {
             <input className="Edit-input" type="text"   id="editNombre" placeholder="Título" />
             <input className="Edit-input" type="text"   id="editAutor"  placeholder="Autor" />
             <input className="Edit-input" type="number"   id="editFecha"  placeholder="Año" />
-            <input className="Edit-submit" type="submit" value="Editar" />
+            <input className="Edit-submit" type="submit" value="Guardar" />
         </form>
         </>
     )

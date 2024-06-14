@@ -1,0 +1,42 @@
+
+
+.Carrousel{
+    position: relative;
+    width: 50%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.Carrousel-container{
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
+    transition: all .5s ease;
+}
+
+.Imagenes{
+    
+    object-fit: cover;
+}
+
+
+
+.Boton-right , .Boton-left{
+    position: absolute;
+    top: calc( 50% - 2rem );
+    right: 0;
+    width: 2rem;
+    cursor: pointer;
+    margin-right: .5rem;
+    color: rgb(21, 58, 3); /* Color del texto de los botones */
+    
+    background-color: #eabfb1; /* Color de fondo del botón (tono otoñal) */
+   
+}
+
+
+.Boton-left{
+    left: 0;
+    margin-left: .5rem;
+    
+}

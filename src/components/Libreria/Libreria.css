@@ -5,7 +5,7 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: center; 
   align-items: center;
   padding: 1rem;
 }
@@ -20,7 +20,6 @@
     padding: 2rem;
     border-radius: 10px;
     margin-top: 7rem;
-    
 }
 
 .add-button {
@@ -35,16 +34,19 @@
   margin-bottom: 1rem;
 }
 
+.add-button:hover{
+  background-color: #793f16;
+}
+
 .lightbox {
-  position: fixed; /* Fijar la posición del contenido */
+  position: fixed; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Centrar en la pantalla */
-  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Asegurarse de que está por encima de otros elementos */
+  z-index: 3; 
   background-color: rgba(255, 245, 230, 0.8); 
   padding: 2rem;
   border-radius: 10px;
@@ -52,14 +54,13 @@
 }
 
 /* Ocultar el formulario de añadir por defecto */
-.Add-form {
+/* .Add-form {
   display: none;
-}
-
+} */
 
 
 .close-button {
-  background-color: #D2691E; /* Naranja otoñal */
+  background-color: #D2691E; 
   width: 1.7rem;
   color: white;
   border: none;
@@ -69,10 +70,10 @@
   top: 0;
   margin-top: 1rem;
   padding: .3rem;
-  font-weight: bold;
+  
 }
 
-.Add-h2 , .Edit-h2 {
+.Add-h2 {
   font-size: 1.7rem;
   padding: 1rem;
   color: #D2691E;
@@ -84,10 +85,9 @@
 
 .Libros-ul {
   width: 30%; 
-  margin: auto;
   margin:.5rem;
   background-color: rgba(255, 245, 230, 0.8); 
-  padding: 10px;
+  padding: .8rem;
   border-radius: 10px;
   overflow: hidden; 
 }
@@ -100,20 +100,39 @@
   background-color: rgba(255, 245, 230, 0.8); 
   padding: 1.5rem;
   border-radius: 10px;
+  width: 100%; /* Asegura que el contenedor tome todo el ancho disponible */
 }
 
-
-.Botones-div {
+.Texto-div {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  flex: 1; /* Permite que el contenedor de texto tome el espacio disponible */
+  margin-right: 1rem; /* Añade un margen para separar los textos de los botones */
+  min-width: 0; /* Permite que el texto se trunque correctamente */
 }
 
 .Libros-li {
   list-style: none;
   color: #4B3621; 
   font-size: 1rem;
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta el desbordamiento */
+  text-overflow: ellipsis; /* Añade puntos suspensivos (...) al final del texto si es muy largo */
 }
+
+.Botones-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0; /* Evita que los botones se reduzcan */
+}
+
+
+/* .Libros-li {
+  list-style: none;
+  color: #4B3621; 
+  font-size: 1rem;
+} */
 
 .Delete-boton, .Edit-boton {
   padding: 0.5rem 1rem;
@@ -138,7 +157,7 @@
 }
 
 .Formulario-edit {
-  width: 80%; 
+  width: 90%; 
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -148,13 +167,14 @@
 }
 
 .Add-form, .Edit-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   background-color: rgba(255, 245, 230, 0.8); 
   padding: 1rem;
   border-radius: 10px;
-  width: 100%;
+  
 }
 
 .Add-input, .Edit-input {
@@ -164,13 +184,26 @@
   box-sizing: border-box;
   color: #8B4513; 
   background-color: rgba(255, 250, 240, 0.8); 
+  word-wrap: break-word;
 }
+
 .Edit-form{
-  
   display: flex;
   flex-flow: row nowrap;
-  
+  justify-content: center;
+  align-items: center;
 }
+
+.Edit-h2{
+  
+  font-size: 1rem;
+  padding: 1rem;
+  color: #D2691E;
+  text-align: center;
+  font-family: 'Garamond', serif;
+  font-weight: bold;
+}
+
 .Add-submit, .Edit-submit {
   background-color: #D2691E; 
   border: none;
@@ -178,9 +211,10 @@
   border-radius: 10px;
   cursor: pointer;
   color: white;
-  font-size: 1rem;
+  font-size: .9rem;
   transition: background-color 0.3s ease;
 }
+
 
 .Add-submit:hover, .Edit-submit:hover {
   background-color: #A0522D; 
@@ -190,7 +224,7 @@
   border: 3px solid #8B4513; 
   border-radius: 5px;
   padding: 0.5rem;
-  width: 100%;
+  
   color: #8B4513; 
   background-color: rgba(255, 250, 240, 0.8); 
   transition: border-color 0.3s ease; 
@@ -207,11 +241,16 @@
 
 @media(max-width : 1328px){
   .Libros-ul{
-    width: 35%;
+    width: 40%;
   }
 }
 @media(max-width : 1024px){
   .Libros-ul{
-    width: 40%;
+    width: 50%;
+  }
+}
+@media(max-width : 768px){
+  .Libros-ul{
+    width: 60%;
   }
 }
