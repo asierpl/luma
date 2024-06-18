@@ -54,7 +54,7 @@ const Webs = (props) => {
     const {href , title , parrafo} = props
     return(
         <>
-        <a href={href} className="Inicio-enlaces">{title}</a>
+        <a href={href} target='_blank' className="Inicio-enlaces">{title}</a>
         <p className="Inicio-parrafo">{parrafo}</p>
         </>
     )

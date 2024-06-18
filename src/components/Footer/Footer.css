@@ -1,0 +1,50 @@
+.Footer {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    background-color: #4E342E; /* Marrón oscuro */
+    color: #FFF3E0; /* Crema claro */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    
+}
+
+.Politicas, .Redes, .Paginas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: .3rem;
+}
+
+.Politica, .Red, .Pagina {
+    
+    color: #FFF3E0; 
+    font-size: .9em;
+    transition: color 0.3s ease;
+}
+
+.Red, .Pagina {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.Red .fa-icon, .Pagina .fa-icon {
+    margin-right: 10rem;
+}
+
+.Red:hover, .Pagina:hover, .Politica:hover  {
+    color: #FF7043; /* Naranja otoñal */
+    text-decoration: underline;
+}
+
+
+
+
+
+

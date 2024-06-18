@@ -9,12 +9,11 @@
 .Carrousel-h2{
     font-family: 'Garamond', serif;
     font-size: 1.5rem;
-    background-color: #D2691E; 
+    background-color: rgb(12, 138, 63); 
     text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
     font-weight: bold;
     color: rgba(255, 255, 255, 0.8); 
     padding: .5rem;
-    
     text-align: center;
     
 }
@@ -23,13 +22,14 @@
    
     display: grid;
     grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
-    transition: all .5s ease;
+    transition: transform .5s ease;
     object-fit: cover;
     
 }
 
 .Carrousel-img{
-    
+    width: 100%;
+    border: solid 10px rgb(12, 138, 63);
     object-fit: cover;
 }
 
@@ -37,14 +37,14 @@
 
 .Boton-right , .Boton-left{
     position: absolute;
-    top: calc( 50% - 2rem );
+    top: calc( 50%);
     right: 0;
     width: 2rem;
     cursor: pointer;
     margin-right: .5rem;
     color: rgb(255, 255, 255); /* Color del texto de los botones */
     
-    background-color: #D2691E; /* Color de fondo del botón (tono otoñal) */
+    background-color: rgb(12, 138, 63); /* Color de fondo del botón (tono otoñal) */
    
 }
 
@@ -85,5 +85,52 @@
 @media(max-width : 768px){
     .Carrousel{
         width: 80%;
+        
     }
+    .Carrousel-img{
+        width: 100%;
+        border: solid 10px rgb(12, 138, 63);
+        object-fit: contain;
+        height: 20rem;
+    }
+    
+}
+@media(max-width : 480px){
+    .Carrousel{
+        width: 95%;
+        
+    }
+    .Carrousel-img{
+        width: 100%;
+        border: solid 10px rgb(12, 138, 63);
+        object-fit: contain;
+        height: 20rem;
+    }
+    
+}
+@media(max-width : 370px){
+    .Carrousel{
+        width: 100%;
+        
+    }
+    .Carrousel-img{
+        width: 100%;
+        border: solid 10px rgb(12, 138, 63);
+        object-fit: contain;
+       
+    }
+    
+}
+@media(max-width : 352px){
+    .Carrousel{
+        width: 100%;
+        
+    }
+    .Carrousel-img{
+        
+        border: solid 10px rgb(12, 138, 63);
+        object-fit: contain;
+       
+    }
+    
 }

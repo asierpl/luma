@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useNavigate } from "react-router-dom"
 import './Sesion.css'
 import { useState } from 'react'
+import { Footer } from '../Footer/Footer'
 
 
 export const Sesion = () => {

@@ -3,6 +3,7 @@ import './Libreria.css'
 import { createContext } from "react"
 import { useContext } from "react"
 import { useEffect, useRef, useState } from "react"
+import { Footer } from '../Footer/Footer'
 
 
 const LibrosContext = createContext()
@@ -179,8 +180,8 @@ export const Libreria = () => {
             <div className="Formulario-edit">
                 <EditLibro/>
             </div>
+            <Footer/>
         </div>
-           
         </>
         </LibrosContext.Provider>
     )
