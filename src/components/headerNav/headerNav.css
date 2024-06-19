@@ -20,16 +20,19 @@
     padding: 0 1rem;
 }
 
+
 .Nav-h1 {
     font-family: 'Garamond', serif;
     font-size: 2rem;
     color: #D2691E; 
     margin-right: 2rem;
+    
 }
 
 .Nav-div {
     display: flex;
     gap: 2rem;
+    
 }
 
 .HeaderNav-a {
@@ -46,7 +49,7 @@
     background-color: #BC8F8F; /* Beige más oscuro al pasar el ratón */
 }
 
-.Cerrar-btn {
+.Cerrar-sesion {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     color: white;
@@ -56,7 +59,108 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.Cerrar-sesionB {
+    display: none;
+}
 
-.Cerrar-btn:hover {
+.Cerrar-sesion:hover {
     background-color: #A0522D; /* Marrón más oscuro al pasar el ratón */
+}
+
+.Menu-btn{
+    display: none;
+    width: 2rem;
+    cursor: pointer;
+}
+.Cerrar-menu{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    color: rgb(230, 230, 230);
+    background-color: #556B2F;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+.Cerrar-menu:hover{
+    background-color: #3b4c1d;
+}
+
+@media(max-width : 768px){
+    .Menu-btn{
+        display: flex;
+        opacity: 1;
+    }
+    .Nav-div{
+        right: 0;
+        top: 0;
+        height: 100vh;
+        display: none;
+        overflow: hidden;
+        z-index: 1;
+        flex-flow: column nowrap; 
+        
+       
+       
+    }
+    
+    .Nav-div.isVisible{
+        position: fixed;
+        width: 50vw;
+        max-width: 20rem;
+        padding: 1rem;
+        display: flex;
+        background-image: url('/assets/libro111.jpg'); 
+        background-size: cover;
+        background-position: center;
+        justify-content: start; /* Centra el contenido verticalmente */
+        align-items: center; /* Centra el contenido horizontalmente */
+        gap: 0;
+       
+       
+    }
+    .HeaderNav-a{
+        background-color: none;
+        color: #D2691E; 
+        margin-top: 2rem;
+        font-size: 1.3em;
+        background-color: rgba(255, 255, 255, 0.8); 
+        font-weight: bold;
+        font-family: 'Garamond', serif;
+        
+    }
+
+    .Cerrar-menu{
+        display: flex;
+        
+    }
+    .Cerrar-sesion{
+        display: none;
+    }
+    .Cerrar-sesionB {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        color: white;
+        background-color: #8B4513; /* Marrón medio */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        bottom: 1rem; /* Mínima separación con la parte inferior */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+    .Cerrar-sesionB:hover {
+        background-color: #A0522D; /* Marrón más oscuro al pasar el ratón */
+    }
+    .HeaderNav-a:hover {
+        /* Beige más oscuro al pasar el ratón */
+        text-decoration: underline;
+    }
 }

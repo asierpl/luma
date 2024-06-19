@@ -6,7 +6,8 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin-top: 6rem;
+    gap: 1rem;
+    margin-top: 7rem;
     font-family: 'Garamond', serif;
     color: white;
 }
@@ -15,7 +16,7 @@
     font-size: 2em;
     text-align: center;
     padding: 1rem;
-    background: linear-gradient(45deg, #fff, rgb(173, 85, 8));
+    background: linear-gradient(45deg, #fee9c6, rgb(173, 85, 8));
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     
@@ -29,7 +30,7 @@
     
     width: 90%;
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.8); 
+   
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -95,6 +96,7 @@
 @media(max-width : 768px){
     .Inicio-container{
         flex-flow: column nowrap;
+        gap: 2rem;
     }
     .Inicio-carrousel{
         width: 100%;

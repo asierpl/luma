@@ -46,5 +46,22 @@
 
 
 
-
+@media(max-width : 768px) {
+    .Footer {
+        padding: 1rem;
+        font-size: .9em;
+    }
+}
+@media(max-width : 480px) {
+    .Footer {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: start;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+}
 

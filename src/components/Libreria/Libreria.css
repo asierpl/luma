@@ -22,7 +22,7 @@
     margin-top: 7rem;
 }
 
-.add-button {
+.Add-button {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -34,11 +34,11 @@
   margin-bottom: 1rem;
 }
 
-.add-button:hover{
+.Add-button:hover{
   background-color: #793f16;
 }
 
-.lightbox {
+.Lightbox {
   position: fixed; 
   top: 50%;
   left: 50%;
@@ -59,7 +59,7 @@
 } */
 
 
-.close-button {
+.Close-button {
   background-color: #D2691E; 
   width: 1.7rem;
   color: white;
@@ -251,6 +251,31 @@
 }
 @media(max-width : 768px){
   .Libros-ul{
-    width: 60%;
+    width: 80%;
+  }
+  .Lightbox{
+    width: 70%;
+  }
+  .Edit-form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+  }
+  
+}
+
+@media(max-width : 480px){
+  .Libros-ul{
+    width: 95%;
+  }
+  .Lightbox{
+    width: 90%;
+  }
+}
+@media(max-width : 320px){
+  .Libros-ul{
+    width: 100%;
   }
 }
