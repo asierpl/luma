@@ -47,8 +47,8 @@
   justify-content: center;
   align-items: center;
   z-index: 3; 
-  background-color: rgba(255, 245, 230, 0.8); 
-  padding: 2rem;
+  background-color: rgba(231, 218, 199, 0.8); 
+  padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -75,7 +75,7 @@
 
 .Add-h2 {
   font-size: 1.7rem;
-  padding: 1rem;
+  padding: 1.5rem;
   color: #D2691E;
   text-align: center;
   font-family: 'Garamond', serif;
@@ -102,22 +102,25 @@
   width: 100%; /* Asegura que el contenedor tome todo el ancho disponible */
 }
 
+.Libros-li {
+  list-style: none;
+  color: #8B4513;
+  font-size: 1rem;
+  overflow: hidden; /* Oculta el desbordamiento */
+  text-overflow: ellipsis; /* Añade puntos suspensivos (...) al final del texto si es muy largo */
+  white-space: normal; /* Permite que el texto se envuelva */
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+}
+
 .Texto-div {
   display: flex;
   flex-direction: column;
   flex: 1; /* Permite que el contenedor de texto tome el espacio disponible */
   margin-right: 1rem; /* Añade un margen para separar los textos de los botones */
   min-width: 0; /* Permite que el texto se trunque correctamente */
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
 }
 
-.Libros-li {
-  list-style: none;
-  color: #8B4513;
-  font-size: 1rem;
-  white-space: nowrap; /* Evita el salto de línea */
-  overflow: hidden; /* Oculta el desbordamiento */
-  text-overflow: ellipsis; /* Añade puntos suspensivos (...) al final del texto si es muy largo */
-}
 
 .Botones-div {
   display: flex;
@@ -266,14 +269,40 @@
   
 }
 
-@media(max-width : 480px){
-  .Libros-ul{
-    width: 95%;
+@media(max-width: 480px) {
+  .Lista-h2{
+    font-size: 2em;
   }
+  .Libro-cada {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .Botones-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .Texto-div {
+    width: 100%; /* Asegura que el contenedor de texto tome todo el ancho disponible */
+  }
+  
   .Lightbox{
-    width: 90%;
+    padding: 1rem;
+  }
+  .Add-form{
+    padding: .5rem;
+  }
+  .Close-button{
+    width: 1.4rem;
+  }
+  .Add-h2{
+    font-size: 1.4rem;
+   
   }
 }
+
 @media(max-width : 320px){
   .Libros-ul{
     width: 100%;
