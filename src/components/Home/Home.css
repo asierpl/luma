@@ -94,6 +94,9 @@
 
 
 @media(max-width : 768px){
+    .Inicio-titulos{
+        width: 80%;
+    }
     .Inicio-container{
         flex-flow: column nowrap;
         gap: 2rem;
@@ -108,6 +111,15 @@
     }
 }
 @media(max-width : 480px){
+    .Inicio-titulos{
+        width: 90%;
+    }
+    .Inicio-h1 {
+        font-size: 1.7em;
+    }
+    .Inicio-h2{
+        font-size: 1.3em;
+    }
     .Inicio-container{
         flex-flow: column nowrap;
     }
@@ -121,6 +133,13 @@
     }
 }
 @media(max-width : 352px){
+
+    .Inicio-h1 {
+        font-size: 1.5em;
+    }
+    .Inicio-h2{
+        font-size: 1.1em;
+    }
     .Inicio-container{
         flex-flow: column nowrap;
         width: 100%;
