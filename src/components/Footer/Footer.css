@@ -58,7 +58,7 @@
 
 @media (max-width: 480px) {
     .Footer {
-        padding: 1rem;
+        padding: 1.2rem;
         font-size: .8em;
         flex-flow: row wrap; /* Permitir el ajuste de las secciones en varias filas */
         justify-content: center; /* Distribuir uniformemente las secciones */
