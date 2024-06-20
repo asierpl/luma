@@ -117,6 +117,7 @@
         justify-content: start; /* Centra el contenido verticalmente */
         align-items: center; /* Centra el contenido horizontalmente */
         gap: 0;
+        padding-top: 3rem;
        
        
     }
@@ -151,7 +152,7 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
         position: absolute;
-        bottom: 1rem; /* Mínima separación con la parte inferior */
+        bottom: 4rem; /* Mínima separación con la parte inferior */
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
