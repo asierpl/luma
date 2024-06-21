@@ -1,39 +1,35 @@
-
-
 .Carrousel{
     position: relative;
     width: 63%;
     margin: auto;
+    box-shadow: 0px -8px 12px rgba(0, 0, 0, 0.5);
+    border: 5px solid #a57a51;
     overflow: hidden;
 }
+
 .Carrousel-h2{
+    padding: .5rem;
     font-family: 'Garamond', serif;
     font-size: 1.5rem;
-    background-color: #96570e; 
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.8); 
-    padding: .5rem;
     text-align: center;
-    
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+    background-color: #d2b48c; 
+    color: rgba(255, 255, 255, 0.8); 
 }
 
 .Carrousel-container{
-   
     display: grid;
     grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
-    transition: transform .5s ease;
     object-fit: cover;
-    
+    transition: transform .5s ease;
 }
 
 .Carrousel-img{
     width: 100%;
-    border: solid 10px #96570e;
+    border: solid 10px #d2b48c;
     object-fit: cover;
 }
-
-
 
 .Boton-right , .Boton-left{
     position: absolute;
@@ -42,17 +38,13 @@
     width: 2rem;
     cursor: pointer;
     margin-right: .5rem;
-    color: rgb(255, 255, 255); /* Color del texto de los botones */
-    
-    background-color: #96570e; /* Color de fondo del botón (tono otoñal) */
-   
+    color: rgb(255, 255, 255); 
+    background-color: #d2b48c; 
 }
-
 
 .Boton-left{
     left: 0;
     margin-left: .5rem;
-    
 }
 
 
@@ -61,21 +53,25 @@
         width: 70%;
     }
 }
+
 @media(max-width : 1200px){
     .Carrousel{
         width: 75%;
     }
 }
+
 @media(max-width : 1100px){
     .Carrousel{
         width: 83%;
     }
 }
+
 @media(max-width : 1024px){
     .Carrousel{
         width: 88%;
     }
 }
+
 @media(max-width : 950px){
     .Carrousel{
         width: 93%;
@@ -85,52 +81,33 @@
 @media(max-width : 768px){
     .Carrousel{
         width: 80%;
-        
     }
+
     .Carrousel-img{
         width: 100%;
-        border: solid 10px #96570e;
-        object-fit: contain;
         height: 20rem;
+        object-fit: contain;
     }
-    
 }
+
 @media(max-width : 480px){
     .Carrousel{
-        width: 95%;
-        
+        width: 95%; 
+        border: 1.5px solid #d2b48c; 
     }
     .Carrousel-img{
-        width: 100%;
-        border: solid 10px #96570e;
-        object-fit: contain;
-        height: 20rem;
+        border: none;
     }
-    
+    .Carrousel-h2{
+        font-size: 1.3rem;
+    }
 }
+
 @media(max-width : 370px){
     .Carrousel{
         width: 100%;
-        
     }
     .Carrousel-img{
         width: 100%;
-        border: solid 10px #96570e;
-        object-fit: contain;
-       
     }
-    
-}
-@media(max-width : 352px){
-    .Carrousel{
-        width: 100%;
-        
-    }
-    .Carrousel-img{
-        
-        border: solid 10px #96570e;
-        object-fit: contain;
-       
-    }
-    
 }

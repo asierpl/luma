@@ -15,6 +15,7 @@ export const Footer = () => {
     return(
         <>
         <div className="Footer">
+
             <div className="Redes">
                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="Red">
                     <FontAwesomeIcon icon={['fab', 'facebook']} /> Facebook
@@ -41,6 +42,7 @@ export const Footer = () => {
             <div className="Luma-footer">
                 <h4 className='Luma-h4'>LUMA</h4>
             </div>
+            
         </div>
         </>
     )

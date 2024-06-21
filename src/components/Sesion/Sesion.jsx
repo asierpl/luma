@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import { useNavigate } from "react-router-dom"
 import './Sesion.css'
 import { useState } from 'react'
-import { Footer } from '../Footer/Footer'
 
 
 export const Sesion = () => {
@@ -51,24 +50,23 @@ export const Sesion = () => {
     const toggleShowPass = () => {
         setShowPass(prevState => !prevState) 
     }
+
     return(
         <>
-        <div className="Login-div">
-            <h2 className='Luma' >LUMA</h2>
-            <form className="Login-form" onSubmit={formHandler}>
-                <input className='Login-input' type="text"     name="user" ref={name} placeholder="Nombre de usuario" />
-                <div className="Password-wrapper">
-                    <input className='Login-input' type={showPass ? "text" : "password"} name="pass" ref={pass} placeholder="Contraseña" />
-                    <button type="button" className="Show-password-btn" onClick={toggleShowPass}>
-                        {showPass ? '🙈' : '👁️'}
-                    </button>
-                </div>
-                <input className='Login-submit' type="submit" value="Acceder" />
-                <p className="Login-footer">*Usuario: luma | *Contraseña: luma</p>
-            </form>
-        </div>
-        
-        
+            <div className="Login-div">
+                <h2 className='Luma' >LUMA</h2>
+                <form className="Login-form" onSubmit={formHandler}>
+                    <input className='Login-input' type="text"     name="user" ref={name} placeholder="Nombre de usuario" />
+                    <div className="Password-wrapper">
+                        <input className='Login-input' type={showPass ? "text" : "password"} name="pass" ref={pass} placeholder="Contraseña" />
+                        <button type="button" className="Show-password-btn" onClick={toggleShowPass}>
+                            {showPass ? '🙈' : '👁️'}
+                        </button>
+                    </div>
+                    <input className='Login-submit' type="submit" value="Acceder" />
+                    <p className="Login-footer">*Usuario: luma | *Contraseña: luma</p>
+                </form>
+            </div>
         </>
     )
 }

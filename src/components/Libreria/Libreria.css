@@ -1,149 +1,140 @@
 .Libreria-div {
-  background-image: url('/assets/libro333.jpg'); 
-  min-height: 100vh;
-  background-size: contain;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center;
-  padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 1rem;
+    background-image: url('/assets/libro333.jpg'); 
+    background-size: contain;
+    background-position: center;
 }
 
 .Lista-h2{
+    margin-bottom: 1rem;
+    margin-top: 7rem;
+    padding: 2rem;
     font-family: 'Garamond', serif;
     font-size: 2.5rem;
     color: #D2691E; 
     text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
-    margin-bottom: 1rem;
     background-color: rgba(255, 255, 255, 0.8); 
-    padding: 2rem;
     border-radius: 10px;
-    margin-top: 7rem;
 }
 
 .Add-button {
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background-color: #D2691E; 
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    background-color: #D2691E; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .Add-button:hover{
-  background-color: #793f16;
+    background-color: #793f16;
 }
 
 .Lightbox {
-  position: fixed; 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centrar en la pantalla */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3; 
-  background-color: rgba(231, 218, 199, 0.8); 
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 3; 
+    background-color: rgba(231, 218, 199, 0.8); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%); 
 }
 
-/* Ocultar el formulario de añadir por defecto */
-/* .Add-form {
-  display: none;
-} */
-
-
 .Close-button {
-  background-color: #D2691E; 
-  width: 1.7rem;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  margin-top: 1rem;
-  padding: .3rem;
-  
+    position: absolute;
+    top: 0;
+    width: 1.7rem;
+    margin-top: 1rem;
+    padding: .3rem;
+    background-color: #D2691E; 
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .Add-h2 {
-  font-size: 1.7rem;
-  padding: 1.5rem;
-  color: #D2691E;
-  text-align: center;
-  font-family: 'Garamond', serif;
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    font-family: 'Garamond', serif;
+    text-align: center;
+    color: #D2691E;
   
 }
 
 .Libros-ul {
-  width: 30%; 
-  margin:.5rem;
-  background-color: rgba(255, 245, 230, 0.8); 
-  padding: .8rem;
-  border-radius: 10px;
-  overflow: hidden; 
+    width: 30%; 
+    margin:.5rem;
+    padding: .8rem;
+    background-color: rgba(255, 245, 230, 0.8); 
+    border-radius: 10px;
+    overflow: hidden; 
 }
 
 .Libro-cada {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(255, 245, 230, 0.8); 
-  padding: 1.5rem;
-  border-radius: 10px;
-  width: 100%; /* Asegura que el contenedor tome todo el ancho disponible */
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 245, 230, 0.8); 
+    border-radius: 10px;
 }
 
-.Libros-li {
-  list-style: none;
-  color: #8B4513;
-  font-size: 1rem;
-  overflow: hidden; /* Oculta el desbordamiento */
-  text-overflow: ellipsis; /* Añade puntos suspensivos (...) al final del texto si es muy largo */
-  white-space: normal; /* Permite que el texto se envuelva */
-  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+.Libros-li, .Libros-liA {
+    font-size: 1rem;
+    list-style: none;
+    color: #8B4513;
+    overflow: hidden; 
+    text-overflow: ellipsis;   /* Añade puntos suspensivos (...) al final del texto si es muy largo */
+    white-space: normal;       /* Permite que el texto se envuelva */
+    word-wrap: break-word;     /* Permite que las palabras largas se dividan */
+}
+
+.Libros-liA{
+    font-weight: bold;
 }
 
 .Texto-div {
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* Permite que el contenedor de texto tome el espacio disponible */
-  margin-right: 1rem; /* Añade un margen para separar los textos de los botones */
-  min-width: 0; /* Permite que el texto se trunque correctamente */
-  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+    display: flex;
+    flex-direction: column;
+    flex: 1;                   /* Permite que el contenedor de texto tome el espacio disponible */
+    margin-right: 1rem;       
+    min-width: 0;              /* Permite que el texto se trunque correctamente */
+    word-wrap: break-word;     /* Permite que las palabras largas se dividan */
 }
 
 
 .Botones-div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex-shrink: 0; /* Evita que los botones se reduzcan */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-shrink: 0; /* Evita que los botones se reduzcan */
 }
 
 
-/* .Libros-li {
-  list-style: none;
-  color: #4B3621; 
-  font-size: 1rem;
-} */
-
 .Delete-boton, .Edit-boton {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  border: none;
-  color: white;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
 .Delete-boton {
@@ -173,138 +164,139 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-color: rgba(255, 245, 230, 0.8); 
   padding: 1rem;
+  background-color: rgba(255, 245, 230, 0.8); 
   border-radius: 10px;
-  
 }
 
 .Add-input, .Edit-input {
-  border: 3px solid #8B4513; 
-  padding: 0.5rem;
-  width: 100%;
-  box-sizing: border-box;
-  color: #8B4513; 
-  background-color: rgba(255, 250, 240, 0.8); 
-  word-wrap: break-word;
+    width: 100%;
+    padding: 0.5rem;
+    border: 3px solid #8B4513; 
+    color: #8B4513; 
+    background-color: rgba(255, 250, 240, 0.8); 
+    word-wrap: break-word;
 }
 
 .Edit-form{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
 }
 
 .Edit-h2{
-  
-  font-size: 1.3rem;
-  padding: 1rem;
-  color: #D2691E;
-  text-align: center;
-  font-family: 'Garamond', serif;
-  font-weight: bold;
+    padding: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: 'Garamond', serif;
+    font-weight: bold;
+    color: #D2691E;
 }
 
 .Add-submit, .Edit-submit {
-  background-color: #D2691E; 
-  border: none;
-  padding: 0.5rem;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  font-size: .9rem;
-  transition: background-color 0.3s ease;
+    padding: 0.5rem;
+    font-size: .9rem;
+    background-color: #D2691E; 
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 
 .Add-submit:hover, .Edit-submit:hover {
-  background-color: #A0522D; 
+    background-color: #A0522D; 
 }
 
 .Add-input, .Edit-input {
-  border: 3px solid #8B4513; 
-  border-radius: 5px;
-  padding: 0.5rem;
-  
-  color: #8B4513; 
-  background-color: rgba(255, 250, 240, 0.8); 
-  transition: border-color 0.3s ease; 
+    padding: 0.5rem;
+    border: 3px solid #8B4513; 
+    border-radius: 5px;
+    color: #8B4513; 
+    background-color: rgba(255, 250, 240, 0.8); 
+    transition: border-color 0.3s ease; 
 }
 
 .Add-input:focus,
 .Add-input:active,
 .Edit-input:focus,
 .Edit-input:active {
-  border-color: #8B4513; 
-  outline: none; 
+    border-color: #8B4513; 
+    outline: none; 
 }
 
 
 @media(max-width : 1328px){
-  .Libros-ul{
-    width: 40%;
-  }
+
+    .Libros-ul{
+        width: 40%;
+    }
 }
+
 @media(max-width : 1024px){
-  .Libros-ul{
-    width: 50%;
-  }
+
+    .Libros-ul{
+        width: 50%;
+    }
 }
+
 @media(max-width : 768px){
-  .Libros-ul{
-    width: 80%;
-  }
-  .Lightbox{
-    width: 70%;
-  }
-  .Edit-form{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
-  }
+
+    .Libros-ul{
+        width: 80%;
+    }
+    .Lightbox{
+        width: 70%;
+    }
+    .Edit-form{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+    }
   
 }
 
 @media(max-width: 480px) {
-  .Lista-h2{
-    font-size: 2em;
-  }
-  .Libro-cada {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-  .Botones-div {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .Texto-div {
-    width: 100%; /* Asegura que el contenedor de texto tome todo el ancho disponible */
-  }
-  
-  .Lightbox{
-    padding: 1rem;
-  }
-  .Add-form{
-    padding: .5rem;
-  }
-  .Close-button{
-    width: 1.4rem;
-  }
-  .Add-h2{
-    font-size: 1.4rem;
-   
-  }
+    .Lista-h2{
+        font-size: 2em;
+    }
+    .Libro-cada {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    .Botones-div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .Texto-div {
+        width: 100%; 
+    }
+
+    .Lightbox{
+        padding: 1rem;
+    }
+    .Add-form{
+        padding: .5rem;
+    }
+    .Close-button{
+        width: 1.4rem;
+    }
+    .Add-h2{
+        font-size: 1.4rem;
+    }
 }
 
 @media(max-width : 320px){
-  .Libros-ul{
-    width: 100%;
-  }
+
+    .Libros-ul{
+        width: 100%;
+    }
 }

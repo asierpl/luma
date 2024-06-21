@@ -3,7 +3,6 @@ import './Carrousel.css'
 
 export const Carrousel = () => {
 
-
     const { VITE_URL_API } = import.meta.env
     const [datos, setDatos] = useState([])
     const [ active , setActive ] = useState(0)
@@ -20,7 +19,7 @@ export const Carrousel = () => {
             .then(data => setDatos( data.carrousel ))  //nombre de la colección
             .catch(error => console.log(error))
             .finally(() => controller.abort())
-    }, []);
+    }, [])
 
     const rightHandler = () => {
         setActive( active + 1 )
@@ -41,6 +40,7 @@ export const Carrousel = () => {
     return(
         <>
         <div className="Carrousel">
+
             <h2 className="Carrousel-h2" >Novedades</h2>
             <div className="Carrousel-container" 
                 style={{
@@ -70,9 +70,6 @@ export const Carrousel = () => {
             </button>
             
         </div>
-       
-        
-        
         </>
     )
 }
@@ -84,7 +81,7 @@ const Imagenes = (props) => {
 
     return(
         <>
-        <img src={src} alt={alt} className="Carrousel-img" loading="lazy" />
+            <img src={src} alt={alt} className="Carrousel-img" loading="lazy" />
         </>
     )
 }

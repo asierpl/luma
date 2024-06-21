@@ -22,23 +22,21 @@
 
 
 .Nav-h1 {
+    margin-right: 2rem;
     font-family: 'Garamond', serif;
     font-size: 2rem;
     color: #D2691E; 
-    margin-right: 2rem;
-    
 }
 
 .Nav-div {
     display: flex;
     gap: 2rem;
-    
 }
 
 .HeaderNav-a {
-    text-decoration: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    text-decoration: none;
     color: #8B4513; /* Marrón medio */
     background-color: #D2B48C; /* Beige */
     border-radius: 5px;
@@ -70,8 +68,7 @@
 .Menu-btn{
     display: none;
     width: 2rem;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 .Cerrar-menu{
@@ -79,20 +76,20 @@
     top: 1rem;
     right: 1rem;
     width: 2rem;
+    display: none;
     color: rgb(230, 230, 230);
     background-color: #556B2F;
     border-radius: 50%;
     cursor: pointer;
-    display: none;
 }
+
 .Cerrar-menu:hover{
     background-color: #3b4c1d;
 }
 
 
-
-
 @media(max-width: 768px) {
+    
     .Menu-btn {
         display: flex;
         opacity: 1;
@@ -103,6 +100,7 @@
         top: 0;
         width: 50vw;
         height: 100vh;
+        max-height: 0;
         display: flex;
         flex-flow: column nowrap;
         justify-content: start;
@@ -114,7 +112,6 @@
         background-position: center;
         overflow: hidden;
         z-index: 1;
-        max-height: 0;
         opacity: 0;
         transition: max-height 0.3s ease, opacity 0.3s ease;
         pointer-events: none;
@@ -125,13 +122,12 @@
         pointer-events: auto;
     }
     .HeaderNav-a {
-        background-color: none;
-        color: #D2691E;
         margin-top: 2rem;
-        font-size: 1.3em;
-        background-color: rgba(255, 255, 255, 0.8);
-        font-weight: bold;
         font-family: 'Garamond', serif;
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #D2691E;
+        background-color: rgba(255, 255, 255, 0.8);
     }
     .Cerrar-menu {
         display: flex;
@@ -140,6 +136,10 @@
         display: none;
     }
     .Cerrar-sesionB {
+        position: absolute;
+        bottom: 4rem;
+        width: 90%;
+        left: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -151,11 +151,7 @@
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        position: absolute;
-        bottom: 4rem;
-        left: 50%;
         transform: translateX(-50%);
-        width: 90%;
     }
     .Cerrar-sesionB:hover {
         background-color: #A0522D;
