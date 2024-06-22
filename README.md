@@ -1,8 +1,52 @@
-# React + Vite
+# LUMA ReactJS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción General
 
-Currently, two official plugins are available:
+LUMA es una plataforma web de diseño propia a través del desarrollo MERN para la búsqueda de libros y la creación de listas personales de libros. Cuenta con 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Login de usuarios.
+- Página de inicio para ver novedades y enlaces a otras webs para la búsqueda de libros.
+- Un gestor para visualizar, añadir, eliminar o actualizar las listas de libros de lectura.
+
+## Tecnologías y Herramientas
+
+- Visual Studio Code
+- React.js
+- MongoDB Compass
+- Express
+- Node.js
+- Postman
+- GitHub Desktop
+- Vercel
+
+## Instalación y Uso
+
+### Frontend (ReactJS)
+
+1.	Navega al repositorio **luma**.
+2.	Abre la terminal y ejecuta los siguientes comandos:
+
+```bash
+npm install
+npm run dev
+```
+Visita http://localhost:5173 para acceder a la aplicación en modo local.
+
+### Backend (ExpressJS)
+
+1.	Navega al repositorio **luma-API**
+2.	Abre la terminal y ejecuta los siguientes comandos:
+
+```bash
+npm install
+npm run dev
+```
+
+### Referencias y Documentación
+
+- https://www.goodreads.com/
+- https://entrelectores.com/
+- https://www.lecturalia.com/
+- https://www.wattpad.com/
+- https://www.librote.com/
+- ChatGPT
