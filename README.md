@@ -2,7 +2,7 @@
 
 ## Descripción General
 
-LUMA es una plataforma web de diseño propia a través del desarrollo MERN para la búsqueda de libros y la creación de listas personales de libros. Cuenta con 
+LUMA es una plataforma web de diseño propia a través del desarrollo MERN para la búsqueda de libros y la creación de listas personales de libros. Cuenta con: 
 
 - Login de usuarios.
 - Página de inicio para ver novedades y enlaces a otras webs para la búsqueda de libros.
@@ -34,7 +34,7 @@ Visita http://localhost:5173 para acceder a la aplicación en modo local.
 
 ### Backend (ExpressJS)
 
-1.	Navega al repositorio **luma-API**
+1.	Navega al repositorio **luma-api**
 2.	Abre la terminal y ejecuta los siguientes comandos:
 
 ```bash
